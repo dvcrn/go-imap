@@ -405,9 +405,9 @@ func (s *Server) Close() error {
 func (s *Server) Enable(extensions ...Extension) {
 	for _, ext := range extensions {
 		// Ignore built-in extensions
-		if ext.Command("UNSELECT") != nil || ext.Command("MOVE") != nil || ext.Command("IDLE") != nil {
-			continue
-		}
+		// if ext.Command("UNSELECT") != nil || ext.Command("MOVE") != nil || ext.Command("IDLE") != nil {
+		// 	continue
+		// }
 		s.extensions = append(s.extensions, ext)
 	}
 }
